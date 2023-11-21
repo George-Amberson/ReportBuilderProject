@@ -21,7 +21,10 @@
 <script setup lang="ts">
 import { defineProps, computed } from 'vue'
 const props = defineProps({
-  report: Object,
+  report: {
+    type: Object,
+    required: true,
+  }
 })
 const getDate = computed(() => {
     return props.report.date.getFullYear() + "/" + (props.report.date.getMonth() + 1) + "/" + props.report.date.getDate();
